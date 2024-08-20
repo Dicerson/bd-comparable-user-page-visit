@@ -16,7 +16,20 @@ public class UserPageVisitGrouper {
     public List<UserPageVisit> groupUserPageVisits(List<UserPageVisit> userPageVisits) {
         // PARTICIPANTS: add logic to implement groupUserPageVisits here
         List<UserPageVisit> userPageVisitsCopy = new ArrayList<>();
-
+        userPageVisitsCopy.add(userPageVisits.get(0));
+        for (int i = 1; i < userPageVisits.size(); i++) {
+            int w = 0;
+            for (int j = 0; j < userPageVisitsCopy.size(); j++) {
+                if (userPageVisits.get(i).compareTo(userPageVisitsCopy.get(j)) < 0) {
+                    userPageVisitsCopy.add(j, userPageVisits.get(i));
+                    w = 1;
+                    break;
+                }
+            }
+            if (w == 0) {
+                userPageVisitsCopy.add(userPageVisits.get(i));
+            }
+        }
         return userPageVisitsCopy;
     }
 }

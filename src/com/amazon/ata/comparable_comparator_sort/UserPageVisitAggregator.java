@@ -11,7 +11,7 @@ public class UserPageVisitAggregator {
     private UserPageVisitGrouper userPageVisitGrouper;
 
     /**
-     * Creats an instance of UserPageVisitAggregator.
+     * Creates an instance of UserPageVisitAggregator.
      * @param userPageVisitGrouper object used to group the visits before aggregating
      */
     public UserPageVisitAggregator(UserPageVisitGrouper userPageVisitGrouper) {
